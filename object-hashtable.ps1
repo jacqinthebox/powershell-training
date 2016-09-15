@@ -10,7 +10,6 @@ for ($i=0;$i -lt 5; $i++) {  Add-Content .\dump-computers.txt $hostname }
 $computers = Get-Content .\dump-computers.txt
 
 
-#start
 #declare de array
 $output = @();
 
