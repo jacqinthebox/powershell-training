@@ -37,6 +37,7 @@ foreach($entry in $computers) {
   #concatenate de array 
   $output += $object
   
+  Write-Output "added $($object.name)"
 }
 
 
