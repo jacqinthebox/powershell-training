@@ -4,12 +4,13 @@ If (Test-Path .\dump-computers.txt) {
   Clear-Content .\dump-computers.txt
 }
 
+#tekstbestand met hostnames genereren om de for loop te demonstreren
 $hostname = HOSTNAME.EXE
 for ($i=0;$i -lt 5; $i++) {  Add-Content .\dump-computers.txt $hostname }
 $computers = Get-Content .\dump-computers.txt
 
 
-
+#start
 #declare de array
 $output = @();
 
@@ -36,7 +37,7 @@ foreach($entry in $computers) {
   
   #concatenate de array 
   $output += $object
-  
+
   Write-Output "added $($object.name)"
 }
 
