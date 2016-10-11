@@ -1,6 +1,9 @@
 #works with SQL Server 2016 Express
-
 Set-ExecutionPolicy Bypass
+
+New-Item -path "registry::hklm\software\policies\microsoft\Internet Explorer\Main" -Force
+New-ItemProperty -path "registry::hklm\software\policies\microsoft\Internet Explorer\Main" -Name DisableFirstRunCustomize -PropertyType dword -Value 1
+
 Invoke-WebRequest https://chocolatey.org/install.ps1 -UseBasicParsing | iex
 choco install sql-server-express -force -yes
 
